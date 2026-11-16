@@ -48,4 +48,42 @@ public class Electrodomestico {
 		return letra;
 	}
 	
+	//getters y setters
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public double getPrecioBase() {
+		return precioBase;
+	}
+
+	public void setPrecioBase(double precioBase) {
+		this.precioBase = precioBase;
+	}
+
+	public char getConsumoEnergetico() {
+		return consumoEnergetico;
+	}
+
+	public void setConsumoEnergetico(char consumoEnergetico) {
+		this.consumoEnergetico = consumoEnergetico;
+	}
+
+	public double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
+	public static int getTotalElectrodomesticos() {
+		return totalElectrodomesticos;
+	}
+	
+	
 }
