@@ -3,23 +3,49 @@ import java.util.HashMap;
 public class Electrodomestico {
 	private String modelo = "Desconocido";
 	private double precioBase = 100;
-	public char consumoEnergetico = 'F';
+	private static final char consumoEnergeticoPorDefecto = 'F';
+	public char consumoEnergetico = consumoEnergeticoPorDefecto;
 	private double peso = 5;
 	
 	public static int totalElectrodomesticos = 0;
 	static HashMap<Character, Integer> consumo = new HashMap<>();
 	
 	static { //Static se va a ejecutar una vez cuando se llame a la clase
-		rellenarConsumo();
+		rellenarLetras();
+	}
+	
+	//Constructores
+	public Electrodomestico() {
+		super();
 	}
 
-	public static void rellenarConsumo() {
+	public Electrodomestico(String modelo, double precioBase, char consumoEnergetico, double peso) {
+		super();
+		this.modelo = modelo;
+		this.precioBase = precioBase;
+		this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
+		this.peso = peso;
+	}
+	
+	//Metodo para rellenar las letras
+	public static void rellenarLetras() {
 		consumo.put('A', 100);
 		consumo.put('B', 80);
         consumo.put('C', 60);
         consumo.put('D', 50);
         consumo.put('E', 30);
         consumo.put('F', 10);
+	}
+	
+	//Metodo para comprobar que el consumo esté entre la A y la F
+	private char comprobarConsumoEnergetico(char consumoEnergetico2) {
+		char letra = consumoEnergeticoPorDefecto;
+		
+		if (consumoEnergetico2 >= 'A' && consumoEnergetico2 <= 'F') {
+			letra = consumoEnergetico2;
+		}
+		
+		return letra;
 	}
 	
 }
