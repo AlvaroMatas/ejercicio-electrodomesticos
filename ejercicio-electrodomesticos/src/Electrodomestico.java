@@ -85,5 +85,35 @@ public class Electrodomestico {
 		return totalElectrodomesticos;
 	}
 	
+	//Metodo para el incremento de precio segun peso y consumo
+	public double incrementoPrecio() {
+		/* En función del consumo energético y del peso,
+			aumenta el precio. Devuelve el incremento correspondiente.
+		*/
+		
+		double incremento = consumo.get(consumoEnergetico);
+		
+		/* La correspondiente al peso es la que se muestra a continuación:
+			PESO PRECIO
+			Entre 0 y 19 kg 10 €
+			Entre 20 y 49 kg 50 €
+			Entre 50 y 79 kg 80 €
+			Mayor que 80 kg 100 €
+		*/
+		
+		if (peso < 20) {
+			incremento += 10;
+		}else if (peso < 50) {
+			incremento += 50;
+		}else if (peso < 80) {
+			incremento += 80;
+		}else {
+			incremento += 100;
+		}
+		
+		
+		return incremento;
+	}
+	
 	
 }
