@@ -17,6 +17,8 @@ public class Electrodomestico {
 	//Constructores
 	public Electrodomestico() {
 		super();
+		
+		totalElectrodomesticos++;
 	}
 
 	public Electrodomestico(String modelo, double precioBase, char consumoEnergetico, double peso) {
@@ -25,6 +27,8 @@ public class Electrodomestico {
 		this.precioBase = precioBase;
 		this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
 		this.peso = peso;
+		
+		totalElectrodomesticos++;
 	}
 	
 	//Metodo para rellenar las letras
