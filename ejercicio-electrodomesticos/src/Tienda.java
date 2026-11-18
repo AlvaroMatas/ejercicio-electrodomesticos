@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import com.sun.source.doctree.EscapeTree;
+
 public class Tienda {
 
 	static BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
@@ -87,7 +89,19 @@ public class Tienda {
 	}
 	
 	//Metodo para pedir modelo
-	
+	public static String pedirModeloLavadora() throws IOException {
+		String modelo = "";
+		
+		while (modelo.isEmpty()) {
+			System.out.print("Modelo: ");
+			modelo = entrada.readLine();
+			
+			if (modelo.isEmpty()) {
+				System.out.println("ERROR: El modelo no puede estar vacio");
+			}
+		}
+		return modelo;
+	}
 	
 	private static void agregarLavadora() { //1
 		// TODO Auto-generated method stub
