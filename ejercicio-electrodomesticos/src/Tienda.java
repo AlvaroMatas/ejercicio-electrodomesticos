@@ -18,10 +18,35 @@ public class Tienda {
 					+ "[3] Modificar precio base de lavadora (Decir modelo) \n"
 					+ "[4] Eliminar lavadora (Decir modelo) \n"
 					+ "[5] Mostrar todas las lavadoras \n"
-					+ "[6] Salir");
+					+ "[6] Mostrar total lavadoras \n"
+					+ "[7] SALIR");
 			
 			opcion = pedirOpcion();
-		} while (opcion != 6);
+		} while (opcion != 7);
+		
+		switch (opcion) {
+		case 1:
+			agregarLavadora();
+			break;
+		case 2:
+			buscarLavadora();
+			break;
+		case 3:
+			modificarPrecioLavadora();
+			break;
+		case 4:
+			eliminarLavadora();
+			break;
+		case 5:
+			mostrarLavadoras();
+			break;
+		case 6:
+			mostrarTotalLavadoras();
+
+		default:
+			System.out.println("Saliendo del programa.........");
+			break;
+		}
 
 	}
 
@@ -35,10 +60,10 @@ public class Tienda {
 		
 		while (!valida) {
 			try {
-				if (opcion >= 1 && opcion <= 6) {
+				if (opcion >= 1 && opcion <= 7) {
 					valida = true;
 				}else {
-					System.out.println("ERROR: debes introducir un numero entre 1 y 6");
+					System.out.println("ERROR: debes introducir un numero entre 1 y 7");
 				}
 			} catch (NumberFormatException e) {
 				System.out.println("ERROR: debes introducir un valor numerico");
@@ -60,5 +85,37 @@ public class Tienda {
 		
 		return vacio;
 	}
+	
+	//Metodo para pedir modelo
+	
+	
+	private static void agregarLavadora() { //1
+		// TODO Auto-generated method stub
+		
+	}
 
+	private static void buscarLavadora() { //2
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void modificarPrecioLavadora() { //3
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void eliminarLavadora() { //4
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mostrarLavadoras() { //5
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mostrarTotalLavadoras() { //6
+		// TODO Auto-generated method stub
+		
+	}
 }
