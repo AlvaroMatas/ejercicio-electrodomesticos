@@ -28,7 +28,7 @@ public class Tienda {
 		
 		switch (opcion) {
 		case 1:
-			agregarLavadora();
+			agregarLavadora(pedirDatoslavadora());
 			break;
 		case 2:
 			buscarLavadora();
@@ -103,9 +103,25 @@ public class Tienda {
 		return modelo;
 	}
 	
-	private static void agregarLavadora() { //1
-		// TODO Auto-generated method stub
+	//Metodo para pedir los datos de la lavadora
+	private static Lavadora pedirDatoslavadora() throws IOException {
 		
+		String modelo = pedirModelo();
+		System.out.print("Precio base: ");
+		double precioBase = Double.parseDouble(entrada.readLine().replace(',', '.'));
+		System.out.print("Consumo energético: ");
+		char consumo = entrada.readLine().charAt(0);
+		System.out.print("Peso: ");
+		double peso = Double.parseDouble(entrada.readLine().replace(',', '.'));
+		System.out.print("Carga: ");
+		double carga = Double.parseDouble(entrada.readLine().replace(',', '.'));
+		
+		return new Lavadora(modelo, precioBase, consumo, peso, carga);
+	}
+	
+	private static void agregarLavadora(Lavadora lavadora) throws IOException { //1
+		System.out.println("*****Vas a agregar una lavadora*****");
+		lavadoras.add(lavadora);
 	}
 
 	private static void buscarLavadora() { //2
