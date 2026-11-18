@@ -22,4 +22,21 @@ public final class Lavadora extends Electrodomestico{
 	public Lavadora(Lavadora copia) {
 		this(copia.getModelo(), copia.getPrecioBase(), copia.getConsumoEnergetico(), copia.getPeso(), copia.carga);
 	}
+	
+	//Metodo para devolver el precio final de la lavadora
+	public double precioFinal() {
+		/*  devuelve el precio final de venta, teniendo en cuenta que al
+		precio base se le deben aplicar los incrementos de la clase Electrodoméstico más
+		el incremento propio de esta clase, que es el siguiente:
+		➢ si tiene una carga mayor de 30 kg, se aumenta el precio 50 €, si no es así, no
+		se incrementa el precio */
+		
+		double precioFinal = getPrecioBase() + incrementoPrecio();
+		
+		if (carga > 30) {
+			precioFinal += 50;
+		}
+		
+		return precioFinal;
+	}
 }
