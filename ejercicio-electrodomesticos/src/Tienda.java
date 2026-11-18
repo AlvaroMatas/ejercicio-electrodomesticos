@@ -89,7 +89,7 @@ public class Tienda {
 	}
 	
 	//Metodo para pedir modelo
-	public static String pedirModeloLavadora() throws IOException {
+	public static String pedirModelo() throws IOException {
 		String modelo = "";
 		
 		while (modelo.isEmpty()) {
