@@ -118,6 +118,18 @@ public class Electrodomestico {
 		
 		return incremento;
 	}
+
+	//Metodo toString para mostrar el contenido
+	@Override
+	public String toString() {
+		return "*****Electrodomestico***** \n"
+				+ "Modelo: " + modelo + "\n"
+				+ "PrecioBase:" + precioBase + "\n"
+				+ "Consumo Energetico: " + consumoEnergetico + "\n"
+				+ "Peso: " + peso + "\n";
+	}
+	
+	
 	
 	
 }
